@@ -15,3 +15,12 @@
 .VPSidebarGroup .items{
   padding-left: 16px;
 }
+
+.VPHero .name{
+  font-size: 48px;
+}
+
+.VPHero .text{
+  max-width: unset;
+  font-size: 32px;
+}

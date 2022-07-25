@@ -1,5 +1,5 @@
 export default {
-  title: '程序员的笔记',
+  title: '开发笔记',
   description: '记录工作学习中遇到的技术问题',
   head: [
     // 改变title的图标
