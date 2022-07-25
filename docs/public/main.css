@@ -1,0 +1,17 @@
+:root {
+  --vp-layout-max-width: 100%;
+}
+
+/* 顶部导航栏样式修改 */
+.VPNav .VPNavBar .container {
+  margin: unset;
+  max-width: var(--vp-layout-max-width);
+}
+
+#VPContent  .VPDoc .container  .content  .content-container {
+  max-width: unset;
+}
+
+.VPSidebarGroup .items{
+  padding-left: 16px;
+}

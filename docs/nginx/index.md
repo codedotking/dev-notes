@@ -1,8 +1,8 @@
-## nginx https 配置
+# nginx https 配置
 
-### docker 版
+## docker 版
 
-#### 创建挂载目录
+### 创建挂载目录
 
 ```shell
 mkdir -p /opt/nginx/config # 存放配置文件
@@ -11,11 +11,11 @@ mkdir -p /opt/nginx/cert   # 存放 https 证书
 mkdir -p /var/log/nginx    # 存放日志
 ```
 
-#### 上传 https 证书
+### 上传 https 证书
 
 申请完证书后，将证书上传到 `/opt/nginx/cert`
 
-#### 编写 nginx.conf
+### 编写 nginx.conf
 
 ```nginx
 # https://cloud.tencent.com/document/product/400/35244 参考文档
@@ -51,7 +51,7 @@ server {
 }
 ```
 
-#### #### 启动命令
+### 启动命令
 
 ```shell
 docker stop nginx-server
@@ -68,13 +68,13 @@ docker run   --name nginx-server \
         -d nginx
 ```
 
-#### 进入容器内部
+### 进入容器内部
 
 ```shell
 docker exec -it nginx-server /bin/bash
 ```
 
-#### 部署新的域名访问 kibana
+### 部署新的域名访问 kibana
 
 ```nginx
 # https://cloud.tencent.com/document/product/400/35244 参考
