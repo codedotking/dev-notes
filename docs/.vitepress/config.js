@@ -13,6 +13,11 @@ export default {
   themeConfig: {
     nav: [
       {
+        text: '首页',
+        link: '/',
+        activeMatch: ''
+      },
+      {
         text: 'Nginx',
         link: '/nginx/',
         activeMatch: '/nginx'
