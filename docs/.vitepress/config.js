@@ -23,7 +23,7 @@ export default {
         activeMatch: '/nginx'
       },
       {
-        text: 'Elastic-Stack',
+        text: 'ElasticStack',
         link: '/elasticstack/',
         activeMatch: '/elasticstack'
       },
