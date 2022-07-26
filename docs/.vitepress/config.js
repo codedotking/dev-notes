@@ -45,7 +45,7 @@ export default {
           text: 'Kafka 安装部署',
           collapsible: true,
           items: [
-            { text: '初识 Kafka', link: '/mq/kafka/index' },
+            { text: '初识 Kafka', link: '/mq/kafka/' },
             { text: 'Kafka 安装部署', link: '/mq/kafka/install' },
             { text: 'Kafka 常用命令', link: '/mq/kafka/command' }
           ]
