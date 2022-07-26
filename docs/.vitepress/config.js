@@ -19,13 +19,13 @@ export default {
       },
       {
         text: 'Nginx',
-        link: '/nginx/install',
+        link: '/nginx/',
         activeMatch: '/nginx'
       },
       {
         text: 'Elastic-Stack',
-        link: '/elastic-stack/',
-        activeMatch: '/elastic-stack'
+        link: '/elasticstack/',
+        activeMatch: '/elasticstack'
       },
       {
         text: 'Redis',
@@ -35,54 +35,53 @@ export default {
       {
         text: '消息队列',
         items: [
-          { text: 'Kafka', link: '/kafka/description.html' }
+          { text: 'Kafka', link: '/mq/kafka/' , activeMatch:'/mq/kafka/'}
         ]
       }
     ],
     sidebar: {
-      '/kafka/': [
+      'mq/kafka': [
         {
           text: 'Kafka 安装部署',
           collapsible: true,
           items: [
-            { text: '初识 Kafka', link: '/kafka/description.html' },
-            { text: 'Kafka 安装部署', link: '/kafka/install.html' },
-            { text: 'Kafka 常用命令', link: '/kafka/command.html' }
+            { text: '初识 Kafka', link: '/mq/kafka/index' },
+            { text: 'Kafka 安装部署', link: '/mq/kafka/install' },
+            { text: 'Kafka 常用命令', link: '/mq/kafka/command' }
           ]
         }
       ],
-      '/nginx/': [
+      'nginx': [
         {
           text: 'Nginx实战',
           collapsible: true,
           items: [
-            { text: 'Nginx 部署', link: '/nginx/install.html' },
-            { text: 'Nginx 配置 https', link: '/nginx/index.html' }
+            { text: 'Nginx 配置 https', link: '/nginx/https' }
           ]
         }
       ],
-      '/elastic-stack/': [
+      'elasticstack': [
         {
           text: 'ElasticStack 相关部署',
           collapsible: true,
           items: [
-            { text: 'ES、Kibana 部署', link: '/elastic-stack/index.html' }
+            { text: 'ES、Kibana 部署', link: '/elasticstack/' }
           ]
         },
         {
           text: 'ElasticStack 进阶调优',
           collapsible: true,
           items: [
-            { text: 'reindex', link: '/elastic-stack/reindex.html' }
+            { text: 'reindex', link: '/elasticstack/reindex', }
           ]
         }
       ],
-      '/redis/': [
+      'redis': [
         {
           text: 'Redis 进阶',
           collapsible: true,
           items: [
-            { text: 'Redis 实现排行榜', link: '/redis/index.html' }
+            { text: 'Redis 实现排行榜', link: '/redis/' }
           ]
         }
       ]
