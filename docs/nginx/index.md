@@ -1,5 +1,7 @@
 # nginx https 配置
 
+> 将现有项目从 http 升级到 https
+
 ## docker 版
 
 ### 创建挂载目录
@@ -7,7 +9,7 @@
 ```shell
 mkdir -p /opt/nginx/config # 存放配置文件
 mkdir -p /opt/nginx/html   # 存放 静态文件
-mkdir -p /opt/nginx/cert   # 存放 https 证书
+mkdir -p /opt/nginx/config/cert   # 存放 https 证书
 mkdir -p /var/log/nginx    # 存放日志
 ```
 
@@ -33,9 +35,9 @@ server {
     #请填写绑定证书的域名
     server_name blog.hewenyao.top; 
     #请填写证书文件的相对路径或绝对路径
-    ssl_certificate /etc/nginx/cert/blog.hewenyao.top_bundle.crt; 
+    ssl_certificate /etc/nginx/config/cert/blog.hewenyao.top_bundle.crt; 
     #请填写私钥文件的相对路径或绝对路径
-    ssl_certificate_key /etc/nginx/cert/blog.hewenyao.top.key; 
+    ssl_certificate_key /etc/nginx/config/cert/blog.hewenyao.top.key; 
     ssl_session_timeout 5m;
     #请按照以下协议配置
     ssl_protocols TLSv1.2 TLSv1.3; 

@@ -19,7 +19,7 @@ export default {
       },
       {
         text: 'Nginx',
-        link: '/nginx/',
+        link: '/nginx/install',
         activeMatch: '/nginx'
       },
       {
@@ -31,14 +31,30 @@ export default {
         text: 'Redis',
         link: '/redis/',
         activeMatch: '/redis'
+      },
+      {
+        text: '消息队列',
+        items: [
+          { text: 'Kafka', link: '/kafka/install.html' }
+        ]
       }
     ],
     sidebar: {
+      '/kafka/': [
+        {
+          text: 'Kafka 安装部署',
+          collapsible: true,
+          items: [
+            { text: 'Kafka 安装部署', link: '/kafka/install.html' }
+          ]
+        }
+      ],
       '/nginx/': [
         {
           text: 'Nginx实战',
           collapsible: true,
           items: [
+            { text: 'Nginx 部署', link: '/nginx/install.html' },
             { text: 'Nginx 配置 https', link: '/nginx/index.html' }
           ]
         }
