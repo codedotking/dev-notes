@@ -35,7 +35,7 @@ export default {
       {
         text: '消息队列',
         items: [
-          { text: 'Kafka', link: '/kafka/install.html' }
+          { text: 'Kafka', link: '/kafka/description.html' }
         ]
       }
     ],
@@ -45,7 +45,9 @@ export default {
           text: 'Kafka 安装部署',
           collapsible: true,
           items: [
-            { text: 'Kafka 安装部署', link: '/kafka/install.html' }
+            { text: '初识 Kafka', link: '/kafka/description.html' },
+            { text: 'Kafka 安装部署', link: '/kafka/install.html' },
+            { text: 'Kafka 常用命令', link: '/kafka/command.html' }
           ]
         }
       ],
