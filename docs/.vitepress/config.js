@@ -80,7 +80,7 @@ export default {
           text: 'Nginx实战',
           collapsible: true,
           items: [
-            { text: 'Nginx 配置 https', link: '/nginx/https' }
+            { text: 'Nginx 配置 https', link: '/nginx/' }
           ]
         }
       ],
