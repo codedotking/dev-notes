@@ -51,7 +51,16 @@ export default {
           text: 'ZooKeeper 入门',
           collapsible: true,
           items: [
-            { text: 'ZooKeeper 简介', link: '/components/zookeeper/' }
+            { text: 'ZooKeeper 初识', link: '/components/zookeeper/' },
+            { text: 'ZooKeeper 安装部署', link: '/components/zookeeper/install' }
+          ]
+        },
+        {
+          text: 'ZooKeeper 代码实战',
+          collapsible: true,
+          items: [
+            { text: 'ZooKeeper 增删改查', link: '/components/zookeeper/code/crud' },
+            { text: 'ZooKeeper 权限管理', link: '/components/zookeeper/code/permissions' }
           ]
         }
       ],
