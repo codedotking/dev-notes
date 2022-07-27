@@ -35,11 +35,26 @@ export default {
       {
         text: '消息队列',
         items: [
-          { text: 'Kafka', link: '/mq/kafka/' , activeMatch:'/mq/kafka/'}
+          { text: 'Kafka', link: '/mq/kafka/', activeMatch: '/mq/kafka/' }
+        ]
+      },
+      {
+        text: '分布式组件',
+        items: [
+          { text: 'zookeeper', link: '/components/zookeeper/', activeMatch: '/components/zookeeper/' }
         ]
       }
     ],
     sidebar: {
+      'components/zookeeper': [
+        {
+          text: 'ZooKeeper 入门',
+          collapsible: true,
+          items: [
+            { text: 'ZooKeeper 简介', link: '/components/zookeeper/' }
+          ]
+        }
+      ],
       'mq/kafka': [
         {
           text: 'Kafka 安装部署',
