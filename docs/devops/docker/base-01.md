@@ -123,7 +123,7 @@ Deleted: sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
    docker eec -it redis-server /bin/bash # 进入容器
    
    apt-get update # 更新数据源列表，获取最新软件源
-   apt-get ins
+   apt-get install vim
    ```
    
    通过 `docker commit`  提交包含 `vim` 的 `redis-server`容器，作为新的一个镜像。
@@ -172,7 +172,7 @@ Deleted: sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
    使用 `docker build ` 构建新的镜像。
    
    ```shell
-    docker build -t hewenyao/nginx .
+   docker build -t hewenyao/nginx .
    
    Sending build context to Docker daemon  2.048kB
    Step 1/2 : FROM nginx
@@ -207,6 +207,14 @@ Deleted: sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
    
    镜像构建成功。
 
+### 推送镜像到仓库
+
+推送前确保自己已经使用`docker login`登录 dockerhub。
+
+```shell
+docker push hewenyao/nginx
+```
+
 ### 镜像标签
 
 我们可以使用 ` docker tag` 命令，为镜像添加一个新的标签（或是新的名称）。
@@ -225,3 +233,113 @@ hewenyao/nginx               latest    d724276ffec2   12 minutes ago   142MB
 ```
 
 
+
+## 容器相关命令
+
+### 容器运行
+
+```shell
+# 使用 zookeeper 镜像，启动一个容器
+docker run -d  --name zookeeper-server -p 2181:2181 \
+-v /etc/docker/zoo/conf:/conf \
+-v /data/docker/zoo/data:/data \
+-v /var/log/zoo/datalog:/datalog \
+-v /var/log/zoo/logs:/logs \
+zookeeper
+```
+
+**参数说明：** **-d:** 后台运行容器，并返回容器ID；**-t:** 为容器重新分配一个伪输入终端，通常与 -i 同时使用；**-p:** 指定端口映射，格式为：主机(宿主)端口:容器端口； **--name="container-name":** 为容器指定一个名称；**--volume , -v:** 绑定一个数据卷。
+
+### 分析容器
+
+**docker inspect :** 获取容器/镜像的元数据。
+
+```shell
+docker inspect redis-server
+```
+
+只获取其中的 元数据的 `Config`部分。
+
+```json
+"Config": {
+  "Hostname": "b1ffac72ed95",
+  "Domainname": "",
+  "User": "",
+  "AttachStdin": false,
+  "AttachStdout": false,
+  "AttachStderr": false,
+  "ExposedPorts": {
+      "6379/tcp": {}
+  },
+  "Tty": false,
+  "OpenStdin": false,
+  "StdinOnce": false,
+  "Env": [
+      "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "GOSU_VERSION=1.14",
+      "REDIS_VERSION=7.0.4",
+      "REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-7.0.4.tar.gz",
+      "REDIS_DOWNLOAD_SHA=f0e65fda74c44a3dd4fa9d512d4d4d833dd0939c934e946a5c622a630d057f2f"
+  ],
+  "Cmd": [
+      "redis-server"
+  ],
+  "Image": "redis",
+  "Volumes": {
+      "/data": {}
+  },
+  "WorkingDir": "/data",
+  "Entrypoint": [
+      "docker-entrypoint.sh"
+  ],
+  "OnBuild": null,
+  "Labels": {}
+}
+```
+
+### 查看容器
+
+```shell
+docker ps # 查看正在运行的容器
+docker ps -a # 查看所有状态的容器
+```
+
+### 容器停止与再启动
+
+```shell
+docker stop zookeeper-server
+
+docker start zookeeper-server
+```
+
+### 容器重启
+
+```shell
+docker restart zookeeper-server # 等价 docker stop zookeeper-server + docker start zookeeper-server
+```
+
+### 进入容器
+
+1. 方法一 `docker exec`
+   
+   ```shell
+   docker exec -it zookeeper-server /bin/bash
+   ```
+
+2. 方法二`docker attach`
+   
+   ::: tip
+   
+   此命令退出容器后，会导致容器停止。
+   
+   :::
+   
+   ```shell
+   docker attach zookeeper-server
+   ```
+
+### 查看容器日志
+
+```shell
+docker logs -100f zookeeper-server # 查看最后 100 条日志
+```
