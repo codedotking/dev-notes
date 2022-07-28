@@ -1,3 +1,5 @@
+const baidu_code = "4d4d50fd2441860647e18fcec2f2067a"
+
 export default {
   title: '开发笔记',
   description: '记录工作学习中遇到的技术问题',
@@ -8,6 +10,9 @@ export default {
     ],
     [
       'link', { rel: 'stylesheet', href: '/main.css', },
+    ],
+    [
+      'script', { src: 'https://hm.baidu.com/hm.js?' + baidu_code }
     ]
   ],
   themeConfig: {
@@ -43,9 +48,26 @@ export default {
         items: [
           { text: 'zookeeper', link: '/components/zookeeper/', activeMatch: '/components/zookeeper/' }
         ]
+      },
+      {
+        text: 'DevOps相关技术',
+        items: [
+          { text: 'Docker', link: '/devops/docker/', activeMatch: '/devops/docker/' }
+        ]
       }
     ],
     sidebar: {
+      'devops/docker': [
+        {
+          text: 'Docker 基础',
+          collapsible: true,
+          items: [
+            { text: 'Docker - 初识与安装部署', link: '/devops/docker/' },
+            { text: 'Docker - 基础-仓库、镜像、容器', link: '/devops/docker/base-01' },
+            { text: 'Docker - Dockerfile', link: '/devops/docker/base-02' },
+          ]
+        },
+      ],
       'components/zookeeper': [
         {
           text: 'ZooKeeper 入门',
@@ -60,7 +82,8 @@ export default {
           collapsible: true,
           items: [
             { text: 'ZooKeeper 增删改查', link: '/components/zookeeper/code/crud' },
-            { text: 'ZooKeeper 权限管理', link: '/components/zookeeper/code/permissions' }
+            { text: 'ZooKeeper 权限管理', link: '/components/zookeeper/code/permissions' },
+            // { text: 'ZooKeeper Watch机制', link: '/components/zookeeper/code/watch' }
           ]
         }
       ],
@@ -109,6 +132,13 @@ export default {
           ]
         }
       ]
+    },
+    footer: {
+      copyright: 'Copyright © 2021-present he.weneyao'
     }
+  },
+  markdown: {
+    theme: 'material-palenight',
+    lineNumbers: true
   }
 }
