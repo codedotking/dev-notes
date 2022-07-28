@@ -60,7 +60,8 @@ export default {
           collapsible: true,
           items: [
             { text: 'ZooKeeper 增删改查', link: '/components/zookeeper/code/crud' },
-            { text: 'ZooKeeper 权限管理', link: '/components/zookeeper/code/permissions' }
+            { text: 'ZooKeeper 权限管理', link: '/components/zookeeper/code/permissions' },
+            { text: 'ZooKeeper Watch机制', link: '/components/zookeeper/code/watch' }
           ]
         }
       ],
