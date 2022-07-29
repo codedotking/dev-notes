@@ -64,7 +64,7 @@ export default {
           items: [
             { text: 'Docker - 初识与安装部署', link: '/devops/docker/' },
             { text: 'Docker - 基础-仓库、镜像、容器', link: '/devops/docker/base-01' },
-            { text: 'Docker - Dockerfile', link: '/devops/docker/base-02' },
+            { text: 'Docker - Dockerfile 命令详解', link: '/devops/docker/base-02' },
           ]
         },
       ],
