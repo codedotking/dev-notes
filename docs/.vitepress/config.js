@@ -33,9 +33,10 @@ export default {
         activeMatch: '/elasticstack'
       },
       {
-        text: 'Redis',
-        link: '/redis/',
-        activeMatch: '/redis'
+        text: '数据库',
+        items: [
+          { text: 'Redis', link: '/redis/', activeMatch: '/redis/' }
+        ]
       },
       {
         text: '消息队列',
@@ -93,6 +94,7 @@ export default {
           collapsible: true,
           items: [
             { text: '初识 Kafka', link: '/mq/kafka/' },
+            { text: '常见用法', link: '/mq/kafka/use-cases' },
             { text: 'Kafka 安装部署', link: '/mq/kafka/install' },
             { text: 'Kafka 常用命令', link: '/mq/kafka/command' }
           ]
@@ -125,13 +127,21 @@ export default {
       ],
       'redis': [
         {
-          text: 'Redis 进阶',
+          text: 'redis 基础',
           collapsible: true,
           items: [
-            { text: 'Redis 实现排行榜', link: '/redis/' }
+            { text: 'redis 配置文件', link: '/redis/config' }
+          ]
+        },
+        {
+          text: 'redis 进阶',
+          collapsible: true,
+          items: [
+            { text: 'redis 进阶之排行榜实现', link: '/redis/' }
           ]
         }
-      ]
+      ],
+
     },
     footer: {
       copyright: 'Copyright © 2021-present he.weneyao'
