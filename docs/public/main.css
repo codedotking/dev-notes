@@ -24,3 +24,13 @@
   max-width: unset;
   font-size: 32px;
 }
+
+
+.vp-doc h2 {
+  border-top: 1px solid var(--vp-c-divider-light);
+  padding-top: 24px;
+  letter-spacing: -0.02em;
+  font-size: 24px;
+  margin: unset;
+  line-height: unset;
+}

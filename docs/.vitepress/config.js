@@ -36,7 +36,7 @@ export default {
         text: '数据库',
         items: [
           { text: 'Redis', link: '/db/redis/', activeMatch: '/db' },
-          { text: 'MySQL', link: '/db/mysql/', activeMatch: '/db' }
+          { text: 'MySQL', link: '/db/mysql/index-01', activeMatch: '/db' }
         ]
       },
       {
@@ -46,8 +46,9 @@ export default {
         ]
       },
       {
-        text: '分布式组件',
+        text: '分布式系统',
         items: [
+          { text: '分布式协议与算法', link: '/components/about/raft', activeMatch: '/components/about/' },
           { text: 'zookeeper', link: '/components/zookeeper/', activeMatch: '/components/zookeeper/' }
         ]
       },
@@ -151,6 +152,15 @@ export default {
           ]
         }
       ],
+      '/components/about':[
+        {
+          text: '分布式算法',
+          collapsible: true,
+          items: [
+            { text: 'raft 算法', link: '/components/about/raft' }
+          ]
+        }
+      ]
 
     },
     footer: {
