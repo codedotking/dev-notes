@@ -38,11 +38,15 @@ Raft 算法在斯坦福 Diego Ongaro 和 John Ousterhout 于 2013 年发表的�
 
 上面提到，一个应用 Raft 协议的集群在刚启动（或 Leader 宕机）时，所有节点的状态都是 Follower，初始 Term（任期）为 0。同时启动选举定时器，每个节点的选举定时器超时时间都在 100~500 毫秒之间且并不一致（避免同时发起选举）。
 
+<img title="" src="https://raw.githubusercontent.com/hewneyao/dev-notes/main/docs/public/images/raft/election-01.jpg" alt="" data-align="center" width="249">
+
 #### 第二阶段：Follower 转为 Candidate 并发起投票
 
 没有 Leader，Followers 无法与 Leader 保持心跳（Heart Beat），节点启动后在一个选举定时器周期内未收到心跳和投票请求，则状态转为候选者 Candidate 状态，且 Term 自增，并向集群中所有节点发送投票请求并且重置选举定时器。
 
 注意，由于每个节点的选举定时器超时时间都在 100-500 毫秒之间，且彼此不一样，以避免所有 Follower 同时转为 Candidate 并同时发起投票请求。换言之，最先转为 Candidate 并发起投票请求的节点将具有成为 Leader 的“先发优势”。
+
+<img title="" src="https://raw.githubusercontent.com/hewneyao/dev-notes/main/docs/public/images/raft/election-02.jpg" alt="" data-align="center" width="249">
 
 #### 第三阶段：投票策略
 
@@ -60,4 +64,8 @@ Raft 算法在斯坦福 Diego Ongaro 和 John Ousterhout 于 2013 年发表的�
 
 注意：有可能一轮选举中，没有 Candidate 收到超过半数节点投票，那么将进行下一轮选举。
 
+<img title="" src="https://raw.githubusercontent.com/hewneyao/dev-notes/main/docs/public/images/raft/election-04.jpg" alt="" data-align="center" width="249">
+
 ## Raft Log Replication 原理
+
+待续 。。。。
