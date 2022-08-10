@@ -35,7 +35,8 @@ export default {
       {
         text: '数据库',
         items: [
-          { text: 'Redis', link: '/redis/', activeMatch: '/redis/' }
+          { text: 'Redis', link: '/db/redis/', activeMatch: '/db' },
+          { text: 'MySQL', link: '/db/mysql/', activeMatch: '/db' }
         ]
       },
       {
@@ -125,19 +126,28 @@ export default {
           ]
         }
       ],
-      'redis': [
+      'db/redis': [
         {
           text: 'redis 基础',
           collapsible: true,
           items: [
-            { text: 'redis 配置文件', link: '/redis/config' }
+            { text: 'redis 配置文件', link: '/db/redis/config' }
           ]
         },
         {
           text: 'redis 进阶',
           collapsible: true,
           items: [
-            { text: 'redis 进阶之排行榜实现', link: '/redis/' }
+            { text: 'redis 进阶之排行榜实现', link: '/db/redis/' }
+          ]
+        }
+      ],
+      'db/mysql': [
+        {
+          text: 'MySQL 索引相关',
+          collapsible: true,
+          items: [
+            { text: '索引初步了解', link: '/db//mysql/index-01' }
           ]
         }
       ],
