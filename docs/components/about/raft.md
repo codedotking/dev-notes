@@ -18,6 +18,8 @@ Raft 算法在斯坦福 Diego Ongaro 和 John Ousterhout 于 2013 年发表的�
 - **Follower**（追随者） ：响应 **Leader** 的日志同步请求，响应 **Candidate** 的邀票请求，以及把客户端请求到 **Follower** 的事务转发（重定向）给 **Leader**。
 - **Candidate**（候选者） ：负责选举投票，集群刚启动或者 **Leader** 宕机时，状态为 **Follower** 的节点将转为 **Candidate** 并发起选举，选举胜出（获得超过半数节点的投票）后，从 **Candidate** 转为 **Leader** 状态。
 
+<img title="" src="https://raw.githubusercontent.com/hewneyao/dev-notes/main/docs/public/images/raft/raft-role.png" alt="" data-align="center" width="249">
+
 ## Raft 三个子问题
 
 通常，Raft 集群中只有一个 Leader，其它节点都是 Follower。Follower 都是被动的，不会发送任何请求，只是简单地响应来自 Leader 或者 Candidate 的请求。Leader 负责处理所有的客户端请求（如果一个客户端和 Follower 联系，那么 Follower 会把请求重定向给 Leader）。
@@ -50,14 +52,12 @@ Raft 算法在斯坦福 Diego Ongaro 和 John Ousterhout 于 2013 年发表的�
 
 请求节点的 Term 小于自己的 Term，且自己尚未投票，则拒绝请求，将票投给自己。
 
-
+<img title="" src="https://raw.githubusercontent.com/hewneyao/dev-notes/main/docs/public/images/raft/election-03.jpg" alt="" style="width=500" data-align="center" width="432">
 
 #### 第四阶段：Candidate 转为 Leader
 
 一轮选举过后，正常情况下，会有一个 Candidate 收到超过半数节点（N/2 + 1）的投票，它将胜出并升级为 Leader。然后定时发送心跳给其它的节点，其它节点会转为 Follower 并与 Leader 保持同步，到此，本轮选举结束。
 
 注意：有可能一轮选举中，没有 Candidate 收到超过半数节点投票，那么将进行下一轮选举。
-
-
 
 ## Raft Log Replication 原理
