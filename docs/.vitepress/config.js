@@ -123,7 +123,8 @@ export default {
           text: 'ElasticStack 进阶调优',
           collapsible: true,
           items: [
-            { text: 'reindex', link: '/elasticstack/reindex', }
+            { text: 'reindex', link: '/elasticstack/reindex', },
+            { text: '数据迁移/导入速度优化', link: '/elasticstack/advanced/data-transfer', }
           ]
         }
       ],
