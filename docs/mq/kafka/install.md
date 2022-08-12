@@ -100,6 +100,45 @@ kafka-console-consumer.sh --bootstrap-server --topic kafkatest --from-beginningt
 
 :::
 
+## 
+
+## Kafka Kraft 模式安装
+
+> Kafka在使用的过程当中，会出现一些问题。由于重度依赖Zookeeper集群，当Zookeeper集群性能发生抖动时，Kafka的性能也会收到很大的影响。因此，在Kafka发展的过程当中，为了解决这个问题，提供KRaft模式，来取消Kafka对Zookeeper的依赖。
+
+### Docker 安装 Kafka （Kraft）
+
+```shell
+docker search kafka # 查找镜像，选择第一个 bitnami/kafka
+
+docker pull bitnami/kafka # 拉取镜像
+
+docker run -d --name kafka-server  \
+-e KAFKA_ENABLE_KRAFT=yes \
+-e ALLOW_PLAINTEXT_LISTENER=TRUE \
+-e KAFKA_CFG_BROKER_ID=1 \
+-e KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@localhost:9093 \
+-e KAFKA_CFG_PROCESS_ROLES=broker,controller \
+-e KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER \
+-e KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT \
+-e KAFKA_CFG_LISTENERS=PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093 \
+-e KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+-e KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT \
+-p 9092:9092 -p 9093:9093 bitnami/kafka # 运行镜像
+```
+
+### 测试是否安装成功
+
+```shell
+docker ps -a # 查看正在运行的容器，发现 kafka-server 正常运行，如果容器挂掉需要 docker logs -f kafka-server 查看报错日志
+docker exec -it kafka-server /bin/bash # 进入容器内部
+cd /opt/bitnami/kafka/bin
+> kafka-topics.sh --bootstrap-server localhost:9092 --create --topic testtopic # 创建一个主题
+> Created topic testtopic.
+> kafka-topics.sh --bootstrap-server localhost:9092 --list # 查看主题
+> testtopic
+```
+
 ## kafka 可视化
 
 #### 下载镜像
