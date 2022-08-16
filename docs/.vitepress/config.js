@@ -28,7 +28,7 @@ export default {
         items: [
           { text: 'ElasticSearch', link: '/elk/es/', activeMatch: '/elk/es/' },
           { text: 'Kibanna', link: '/elk/kibana/', activeMatch: '/elk/kibana/' },
-          { text: 'Filebeat', link: '/elk/filebeat/', activeMatch: '/elk/filebeat/' }
+          { text: 'Filebeat', link: '/elk/filebeat/', activeMatch: '/elk/filebeat/'}
         ]
       },
       {
@@ -130,10 +130,7 @@ export default {
       'elk/kibana': [
         {
           text: 'Kibana 相关部署',
-          collapsible: true,
-          items: [
-            { text: 'Kibana 部署', link: '/elk/kibana/' }
-          ]
+          link: '/elk/kibana/'
         },
       ],
       'elk/filebeat': [
