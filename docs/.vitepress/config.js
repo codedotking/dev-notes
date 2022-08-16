@@ -27,8 +27,8 @@ export default {
         text: 'Elastic-Stack',
         items: [
           { text: 'ElasticSearch', link: '/elk/es/', activeMatch: '/elk/es/' },
-          { text: 'Kibanna', link: '/elk/kibana/', activeMatch: '/elk/kibana/' },
-          { text: 'Filebeat', link: '/elk/filebeat/', activeMatch: '/elk/filebeat/'}
+          { text: 'Filebeat', link: '/elk/filebeat/', activeMatch: '/elk/filebeat/'},
+          { text: 'Kibanna', link: '/elk/kibana/', activeMatch: '/elk/kibana/' }
         ]
       },
       {
@@ -66,7 +66,7 @@ export default {
           items: [
             { text: 'Docker - 初识与安装部署', link: '/devops/docker/' },
             { text: 'Docker - 基础-仓库、镜像、容器', link: '/devops/docker/base-01' },
-            { text: 'Docker - Dockerfile 命令详解', link: '/devops/docker/base-02' },
+            { text: 'Docker - Dockerfile 命令详解', link: '/devops/docker/base-02' }
           ]
         },
       ],
@@ -122,21 +122,25 @@ export default {
           text: 'ES 进阶调优',
           collapsible: true,
           items: [
-            { text: 'reindex', link: '/elk/es/reindex', },
-            { text: '数据迁移/导入速度优化', link: '/elk/es/data-transfer', }
+            { text: 'reindex', link: '/elk/es/reindex'},
+            { text: '数据迁移/导入速度优化', link: '/elk/es/data-transfer' }
           ]
         }
       ],
       'elk/kibana': [
         {
           text: 'Kibana 相关部署',
-          link: '/elk/kibana/'
-        },
+          items: [
+            { text: 'Kibana 安装',link: '/elk/kibana/' }
+          ]
+        }
       ],
       'elk/filebeat': [
         {
-          text: 'filebeat 介绍',
-          link: '/elk/filebeat/'
+          text: 'filebeat 简介',
+          items: [
+            { text: 'filebeat 介绍',  link: '/elk/filebeat/' }
+          ]
         }
       ],
       'db/redis': [
