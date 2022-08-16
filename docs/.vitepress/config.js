@@ -18,19 +18,18 @@ export default {
   themeConfig: {
     nav: [
       {
-        text: '首页',
-        link: '/',
-        activeMatch: ''
+        text: '首页', link: '/', activeMatch: ''
       },
       {
-        text: 'Nginx',
-        link: '/nginx/',
-        activeMatch: '/nginx'
+        text: 'Nginx', link: '/nginx/', activeMatch: '/nginx'
       },
       {
-        text: 'ElasticStack',
-        link: '/elasticstack/',
-        activeMatch: '/elasticstack'
+        text: 'Elastic-Stack',
+        items: [
+          { text: 'ElasticSearch', link: '/elk/es/', activeMatch: '/elk/es/' },
+          { text: 'Kibanna', link: '/elk/kibana/', activeMatch: '/elk/kibana/' },
+          { text: 'Filebeat', link: '/elk/filebeat/', activeMatch: '/elk/filebeat/' }
+        ]
       },
       {
         text: '数据库',
@@ -111,21 +110,36 @@ export default {
           ]
         }
       ],
-      'elasticstack': [
+      'elk/es': [
         {
-          text: 'ElasticStack 相关部署',
+          text: 'ES 相关部署',
           collapsible: true,
           items: [
-            { text: 'ES、Kibana 部署', link: '/elasticstack/' }
+            { text: 'ES 部署', link: '/elk/es/' }
           ]
         },
         {
-          text: 'ElasticStack 进阶调优',
+          text: 'ES 进阶调优',
           collapsible: true,
           items: [
-            { text: 'reindex', link: '/elasticstack/reindex', },
-            { text: '数据迁移/导入速度优化', link: '/elasticstack/advanced/data-transfer', }
+            { text: 'reindex', link: '/elk/es/reindex', },
+            { text: '数据迁移/导入速度优化', link: '/elk/es/data-transfer', }
           ]
+        }
+      ],
+      'elk/kibana': [
+        {
+          text: 'Kibana 相关部署',
+          collapsible: true,
+          items: [
+            { text: 'Kibana 部署', link: '/elk/kibana/' }
+          ]
+        },
+      ],
+      'elk/filebeat': [
+        {
+          text: 'filebeat 介绍',
+          link: '/elk/filebeat/'
         }
       ],
       'db/redis': [
@@ -153,7 +167,7 @@ export default {
           ]
         }
       ],
-      '/components/about':[
+      '/components/about': [
         {
           text: '分布式算法',
           collapsible: true,
