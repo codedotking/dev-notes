@@ -26,7 +26,7 @@ export default {
       {
         text: 'Elastic-Stack',
         items: [
-          { text: 'ES', link: '/elk/elastic-search/', activeMatch: '/elk/elastic-search/' },
+          { text: 'ElasticSearch', link: '/elk/elastic-search/', activeMatch: '/elk/elastic-search/' },
           { text: 'Kibanna', link: '/elk/kibana/', activeMatch: '/elk/kibana/' },
           { text: 'Filebeat', link: '/elk/filebeat/', activeMatch: '/elk/filebeat/' },
         ]
