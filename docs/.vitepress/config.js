@@ -26,9 +26,9 @@ export default {
       {
         text: 'Elastic-Stack',
         items: [
-          { text: 'ElasticSearch', link: '/elk/es/', activeMatch: '/elk/es/' },
-          { text: 'Filebeat', link: '/elk/filebeat/', activeMatch: '/elk/filebeat/'},
-          { text: 'Kibanna', link: '/elk/kibana/', activeMatch: '/elk/kibana/' }
+          { text: 'ES', link: '/elk/elastic-search/', activeMatch: '/elk/elastic-search/' },
+          { text: 'Kibanna', link: '/elk/kibana/', activeMatch: '/elk/kibana/' },
+          { text: 'Filebeat', link: '/elk/filebeat/', activeMatch: '/elk/filebeat/' },
         ]
       },
       {
@@ -59,6 +59,47 @@ export default {
       }
     ],
     sidebar: {
+      '/elk/elastic-search/': [
+        {
+          text: 'ES 相关部署',
+          collapsible: true,
+          items: [
+            { text: 'ES 部署', link: '/elk/elastic-search/' },
+          ]
+        },
+        {
+          text: 'ES 基础',
+          collapsible: true,
+          items: [
+            { text: 'reindex api', link: '/elk/elastic-search/reindex.md' }
+          ]
+        },
+        {
+          text: 'ES 进阶调优',
+          collapsible: true,
+          items: [
+            { text: '数据迁移/导入速度优化', link: '/elk/elastic-search/data-transfer.md' }
+          ]
+        }
+      ],
+      'elk/kibana': [
+        {
+          text: 'Kibana 相关部署',
+          collapsible: true,
+          items: [
+            { text: 'Kibana 安装', link: '/elk/kibana/' }
+          ]
+        }
+      ],
+      'elk/filebeat': [
+        {
+          text: 'filebeat 简介',
+          collapsible: true,
+          items: [
+            { text: 'filebeat 介绍', link: '/elk/filebeat/' }
+          ]
+        }
+      ],
       'devops/docker': [
         {
           text: 'Docker 基础',
@@ -107,39 +148,6 @@ export default {
           collapsible: true,
           items: [
             { text: 'Nginx 配置 https', link: '/nginx/' }
-          ]
-        }
-      ],
-      'elk/es': [
-        {
-          text: 'ES 相关部署',
-          collapsible: true,
-          items: [
-            { text: 'ES 部署', link: '/elk/es/' }
-          ]
-        },
-        {
-          text: 'ES 进阶调优',
-          collapsible: true,
-          items: [
-            { text: 'reindex', link: '/elk/es/reindex'},
-            { text: '数据迁移/导入速度优化', link: '/elk/es/data-transfer' }
-          ]
-        }
-      ],
-      'elk/kibana': [
-        {
-          text: 'Kibana 相关部署',
-          items: [
-            { text: 'Kibana 安装',link: '/elk/kibana/' }
-          ]
-        }
-      ],
-      'elk/filebeat': [
-        {
-          text: 'filebeat 简介',
-          items: [
-            { text: 'filebeat 介绍',  link: '/elk/filebeat/' }
           ]
         }
       ],
