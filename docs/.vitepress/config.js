@@ -70,7 +70,7 @@ export default {
           text: 'Spring 框架',
           collapsible: true,
           items: [
-            { text: 'Spring 初步使用', link: '/dev-frame/spring/' },
+            { text: 'Spring 初步使用', link: '/dev-frame/spring/' }
           ]
         }
       ],
@@ -108,8 +108,11 @@ export default {
       ],
       'elk/beats': [
         {
-          text: 'Beats 简介',
-          link: '/elk/beats/'
+          text: 'Beats',
+          collapsible: true,
+          items: [
+            { text: 'Beats 简介', link: '/elk/beats/' }
+          ]
         },
         {
           text: 'FileBeat',
