@@ -28,7 +28,7 @@ export default {
         items: [
           { text: 'ElasticSearch', link: '/elk/elastic-search/', activeMatch: '/elk/elastic-search/' },
           { text: 'Kibanna', link: '/elk/kibana/', activeMatch: '/elk/kibana/' },
-          { text: 'Filebeat', link: '/elk/filebeat/', activeMatch: '/elk/filebeat/' },
+          { text: 'Beats', link: '/elk/beats/', activeMatch: '/elk/beats/' },
         ]
       },
       {
@@ -42,6 +42,12 @@ export default {
         text: '消息队列',
         items: [
           { text: 'Kafka', link: '/mq/kafka/', activeMatch: '/mq/kafka/' }
+        ]
+      },
+      {
+        text: '开发框架',
+        items: [
+          { text: 'Spring 全家桶', link: '/dev-frame/spring/', activeMatch: '/dev-frame/spring/' }
         ]
       },
       {
@@ -59,6 +65,15 @@ export default {
       }
     ],
     sidebar: {
+      '/dev-frame/spring/':[
+        {
+          text: 'Spring 框架',
+          collapsible: true,
+          items: [
+            { text: 'Spring 初步使用', link: '/dev-frame/spring/' },
+          ]
+        }
+      ],
       '/elk/elastic-search/': [
         {
           text: 'ES 相关部署',
@@ -91,12 +106,16 @@ export default {
           ]
         }
       ],
-      'elk/filebeat': [
+      'elk/beats': [
         {
-          text: 'filebeat 简介',
+          text: 'Beats 简介',
+          link: '/elk/beats/'
+        },
+        {
+          text: 'FileBeat',
           collapsible: true,
           items: [
-            { text: 'filebeat 介绍', link: '/elk/filebeat/' }
+            { text: 'FileBeat 简介', link: '/elk/beats/filebeat/' }
           ]
         }
       ],
