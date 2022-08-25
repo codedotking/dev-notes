@@ -35,7 +35,8 @@ export default {
         text: '数据库',
         items: [
           { text: 'Redis', link: '/db/redis/', activeMatch: '/db' },
-          { text: 'MySQL', link: '/db/mysql/index-01', activeMatch: '/db' }
+          { text: 'MySQL', link: '/db/mysql/index-01', activeMatch: '/db' },
+          { text: 'ClickHosue', link: '/db/ch/', activeMatch: '/db' }
         ]
       },
       {
@@ -186,6 +187,15 @@ export default {
           collapsible: true,
           items: [
             { text: 'redis 进阶之排行榜实现', link: '/db/redis/' }
+          ]
+        }
+      ],
+      'db/ch': [
+        {
+          text: 'ClickHouse 基础',
+          collapsible: true,
+          items: [
+            { text: 'ClickHouse 扫盲', link: '/db/ch/base-01' }
           ]
         }
       ],
