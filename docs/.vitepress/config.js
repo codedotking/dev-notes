@@ -35,7 +35,7 @@ export default {
         text: '数据库',
         items: [
           { text: 'Redis', link: '/db/redis/', activeMatch: '/db' },
-          { text: 'MySQL', link: '/db/mysql/index-01', activeMatch: '/db' },
+          { text: 'MySQL', link: '/db/mysql/innodb-01', activeMatch: '/db/mysql' },
           { text: 'ClickHosue', link: '/db/ch/', activeMatch: '/db' }
         ]
       },
@@ -200,6 +200,13 @@ export default {
         }
       ],
       'db/mysql': [
+        {
+          text: 'MySQL InnoDB',
+          collapsible: true,
+          items: [
+            { text: 'InnoDB 底层结构-数据页', link: '/db//mysql/innodb-01' }
+          ]
+        },
         {
           text: 'MySQL 索引相关',
           collapsible: true,
