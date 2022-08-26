@@ -29,8 +29,10 @@
 .vp-doc h2 {
   margin: unset;
   line-height: unset;
+  font-size: 20px;
 }
 
 .vp-doc h3 {
+  font-size: 18px;
   margin: 18px 0 0;
 }
