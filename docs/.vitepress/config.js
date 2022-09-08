@@ -81,6 +81,7 @@ export default {
           collapsible: true,
           items: [
             { text: 'ES 部署', link: '/elk/elastic-search/' },
+            { text: 'ES 配置文件', link: '/elk/elastic-search/elasticsearch-yml.md' },
           ]
         },
         {
