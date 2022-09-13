@@ -202,6 +202,13 @@ export default {
       ],
       'db/mysql': [
         {
+          text: 'MySQL 安装',
+          collapsible: true,
+          items: [
+            { text: 'Docker 安装', link: '/db//mysql/install-01' }
+          ]
+        },
+        {
           text: 'MySQL InnoDB',
           collapsible: true,
           items: [
