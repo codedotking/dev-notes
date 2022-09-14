@@ -32,7 +32,7 @@ mkdir -p /etc/mysql/conf.d # 创建存放配置目录的目录
 mkdir -p /data/mysql/     # 创建存放数据目录的目录
 ```
 
-###　Docker 拷贝数据目录、配置目录
+### Docker 拷贝数据目录、配置目录
 ```shell
 docker cp mysql-server:/var/lib/mysql /data/mysql
 docker cp mysql-server:/etc/mysql/conf.d /ect/mysql
