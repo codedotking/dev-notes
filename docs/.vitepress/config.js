@@ -61,12 +61,13 @@ export default {
       {
         text: 'DevOps相关技术',
         items: [
-          { text: 'Docker', link: '/devops/docker/', activeMatch: '/devops/docker/' }
+          { text: 'Docker', link: '/devops/docker/', activeMatch: '/devops/docker/' },
+          { text: 'Linux', link: '/devops/linux/user', activeMatch: '/devops/linux/user' }
         ]
       }
     ],
     sidebar: {
-      '/dev-frame/spring/':[
+      '/dev-frame/spring/': [
         {
           text: 'Spring 框架',
           collapsible: true,
@@ -132,6 +133,15 @@ export default {
             { text: 'Docker - 初识与安装部署', link: '/devops/docker/' },
             { text: 'Docker - 基础-仓库、镜像、容器', link: '/devops/docker/base-01' },
             { text: 'Docker - Dockerfile 命令详解', link: '/devops/docker/base-02' }
+          ]
+        },
+      ],
+      'devops/linux': [
+        {
+          text: 'Linux 基础',
+          collapsible: true,
+          items: [
+            { text: 'Linux - 用户', link: '/devops/linux/user' }
           ]
         },
       ],
